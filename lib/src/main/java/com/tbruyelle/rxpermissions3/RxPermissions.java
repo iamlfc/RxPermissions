@@ -19,15 +19,14 @@ import android.app.Activity;
 import android.os.Build;
 import android.text.TextUtils;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.VisibleForTesting;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.VisibleForTesting;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableSource;
 import io.reactivex.rxjava3.core.ObservableTransformer;
@@ -75,7 +74,7 @@ public class RxPermissions {
             fragmentManager
                     .beginTransaction()
                     .add(rxPermissionsFragment, TAG)
-                    .commitNow();
+                    .commitAllowingStateLoss();
         }
         return rxPermissionsFragment;
     }
